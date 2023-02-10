@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Dischi JSON</title>
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+    <!-- Font awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous'/>
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Axios -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js' integrity='sha512-NCiXRSV460cHD9ClGDrTbTaw0muWUBf/zB/yLzJavRsPNUl9ODkUVmUHsZtKu17XknhsGlmyVoJxLg/ZQQEeGA==' crossorigin='anonymous'></script>
+    <!-- Vue JS-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>  
+    <!-- JS -->
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div id="app" class="position-relative">   
+        <div v-if="showAlbum" class="hide-albums rounded-3 p-3">
+            <div v-for="disc in discs" :key="disc.title" class="text-white text-center">
+                <img :src="disc.poster" :alt="disc.title" class="w-25 pb-3">
+                <div>
+                    <h4>{{disc.title}}</h4>
+                    <div class="pb-2">{{disc.author}}</div>
+                    <div class="fw-bold">{{disc.year}}</div>
+                    <div>{{disc.genre}}</div>
+                </div>
+            </div>
+            <button class="text-white bg-transparent border-1 border-white rounded-3 fs-2 px-2 hide-button" @click="toggleAlbum">X</button>
+        </div>
+        <header class="d-flex align-items-center justify-content-between px-5">
+            <i class="fa-brands fa-spotify fa-2x"></i>
+            <form action="api.php" method="GET" class="d-flex">
+                <select v-model="selectedGenre" @change="filterDiscs" class="form-select">
+                    <option value="">Tutti i generi</option>
+                    <option v-for="genre in genres" :key="genre">{{genre}}</option>
+                </select>
+            </form>
+        </header>
+        <main>
+            <section id="section-cards" class="container py-5">
+                <div class="row g-5">
+                    <div class="col-4" v-for="disc in discs" :key="disc.title">
+                        <div class="card align-items-center py-4 text-white">
+                            <img :src="disc.poster" :alt="disc.title" class="w-50 pb-3" @click="toggleAlbum">
+                            <h4>{{disc.title}}</h4>
+                            <div class="pb-2">{{disc.author}}</div>
+                            <div class="fw-bold">{{disc.year}}</div>
+                            <div>{{disc.genre}}</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

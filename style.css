@@ -1,0 +1,53 @@
+/* ! Custom properties */
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark-blue: #06131F;
+    --blue: #112030;
+    --light-blue: #1D2D3C;
+    --green: #18D860;
+}
+
+/* ! Generics */
+header {
+    height: 80px;
+    background-color: var(--dark-blue);
+}
+
+main {
+    background-color: var(--light-blue);
+    min-height: 100vh;
+}
+
+/* ! Utils */
+
+.fa-spotify {
+    color: var(--green);
+}
+
+select.form-select {
+    cursor: pointer;
+}
+
+.card {
+    min-height: 350px;
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.hide-albums {
+    width: 95%;
+    min-height: 98%;
+    background-color: rgba(17,32,48);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hide-button {
+    position: absolute;
+    right: 16px;
+}
+
