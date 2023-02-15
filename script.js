@@ -6,7 +6,7 @@ data (){
         showAlbum: false,
         discs: [],
         selectedGenre: '',
-        genres: ['Rock','Pop', 'Jazz', 'Metal']
+        genres: ['Rock','Pop', 'Jazz', 'Metal'],
     }
 },
 methods: {
@@ -24,8 +24,9 @@ methods: {
     this.genres.sort();
   },
 
-  toggleAlbum() {
-    this.showAlbum = !this.showAlbum;
+  toggleAlbum(event, index) {
+    this.showAlbum = index;
+    console.log(index);
   }
 },
 

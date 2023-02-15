@@ -35,19 +35,30 @@ select.form-select {
     cursor: pointer;
 }
 
+.card:hover {
+    box-shadow: 0 0 6px 1px white;
+}
+
+
 .hide-albums {
     width: 95%;
-    min-height: 98%;
-    background-color: rgba(17,32,48);
+    min-height: 95%;
+    background-color: rgb(17,32,48);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    box-shadow: 0 0 6px 1px white;
 }
 
 .hide-button {
     position: absolute;
-    right: 16px;
+    right: 30px;
+    top: 30px;
+}
+
+.hide-button:hover {
+    box-shadow: 0 0 6px 1px white;
 }
 
