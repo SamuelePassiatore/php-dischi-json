@@ -1,5 +1,40 @@
 <?php
 
+//! SQL FILE
+// // Preparo le informazioni di connessione
+// const DB_SERVERNAME = 'localhost';
+// const DB_USERNAME = 'root';
+// const DB_PASSWORD = 'root';
+// const DB_NAME = 'discs';
+
+// try {
+//     $conn = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// } catch (Exception $e) {
+//     echo $e->getMessage();
+//     die();
+// }
+
+// try {
+//     $sql = 'SELECT * FROM `albums`';
+//     $result = $conn->query($sql);
+
+//     if ($result->num_rows) {
+//         while ($row = $result->fetch_assoc()) {
+//             echo $row['title'];
+//         }
+//     } else {
+//         echo 'Spiacente';
+//     }
+// } catch (Exception $e) {
+//     echo $e->getMessage();
+//     die();
+// }
+
+// $conn->close();
+
+
+//! JSON FILE
+
 // Recover json file 
 $source_path = __DIR__ . './data.json';
 
